@@ -1,18 +1,19 @@
 var currentShader = null;
 
 function self.ready() {
-    view.LoadConfigs(function(settings) {
-        $(#upsslider).value = $(#upsslidervalue).value = settings.UpdatesPerSecond;
-        $(#fpsslider).value = $(#fpsslidervalue).value = settings.FramesPerSecond;
-        $(#tsslider).value = $(#tsslidervalue).value = settings.TimeScale;
-        $(#mousetoggle).checked = settings.MouseInteract;
-        currentShader = settings.ShaderName;
-    });
-    view.LoadShaders(function(shaders) {
-        for(var shader in shaders) {
-            $(#shaderlist).append(<Shader title={shader.Name} author={shader.Author} image={shader.Image} value={shader.FileName}/>);
-        }
-    });
+    var configs = view.LoadConfigs();
+
+    $(#upsslider).value = $(#upsslidervalue).value = configs.UpdatesPerSecond;
+    $(#fpsslider).value = $(#fpsslidervalue).value = configs.FramesPerSecond;
+    $(#tsslider).value = $(#tsslidervalue).value = configs.TimeScale;
+    $(#mousetoggle).checked = configs.MouseInteract;
+    currentShader = configs.ShaderName;
+
+    var shaders = view.LoadShaders();
+
+    for(var shader in shaders) {
+        $(#shaderlist).append(<Shader title={shader.Name} author={shader.Author} image={shader.Image} value={shader.FileName}/>);
+    }
 }
 
 event change $(#upsslider) {
@@ -36,15 +37,17 @@ event change $(.shader) {
 }
 
 function Shader(props) {
-    var component = <div.shader {props.checked ? checked : ''} value={props.value}>
+    var component = <div.shader value={props.value}>
         <img src={props.image || 'no-image.png'}/>
         <div.info>
             <h2>{props.title || '-'}</h2>
             <div><b>Author:</b> {props.author || '-'}</div>
         </div>
     </div>;
+
     if (props.value === currentShader) {
         component[0].checked = true;
     }
+
     return component;
 }

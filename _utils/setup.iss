@@ -30,11 +30,11 @@ Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
 
 [CustomMessages]
 english.AdditionalTasks=Additional tasks:
-russian.AdditionalTasks=Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ Р·Р°РґР°С‡Рё:
+russian.AdditionalTasks=Дополнительные задачи:
 english.AssociateFiles=Associate files ".glslwallpaper" with application
-russian.AssociateFiles=РђСЃСЃРѕС†РёРёСЂРѕРІР°С‚СЊ С„Р°Р№Р»С‹ ".glslwallpaper" СЃ РїСЂРёР»РѕР¶РµРЅРёРµРј
+russian.AssociateFiles=Ассоциировать файлы ".glslwallpaper" с приложением
 english.WallpaperFileType=GLSL wallpaper file
-russian.WallpaperFileType=Р¤Р°Р№Р» РѕР±РѕРµРІ GLSL
+russian.WallpaperFileType=Файл обоев GLSL
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
@@ -44,7 +44,7 @@ Name: "associate"; Description: "{cm:AssociateFiles}"; GroupDescription: "{cm:Ad
 Source: "..\_release\app\GLSLWallpapers.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\_release\app\INIFileParser.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\_release\app\OpenTK.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\_release\app\sciter.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\_release\app\Sciter.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\_release\app\SciterSharpWindows.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\_release\app\data\*"; DestDir: "{app}\data"; Flags: ignoreversion recursesubdirs createallsubdirs
 

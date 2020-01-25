@@ -63,7 +63,9 @@ namespace GLSLWallpapers {
         }
 
         static void ShowSettingsForm() {
-            App.Run();
+            if (!App.IsRunning) {
+                App.Run();
+            }
         }
 
         void Exit() {

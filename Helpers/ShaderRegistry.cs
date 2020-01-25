@@ -35,6 +35,10 @@ namespace GLSLWallpapers.Helpers {
                 ShaderInfo info = ShaderInfo.FromFile(path);
                 shaders.Add(info.FileName, info);
             }
+
+            if (Config.ShaderName == null) {
+                Config.ShaderName = First().FileName;
+            }
         }
 
         public static bool Has(string name) {
